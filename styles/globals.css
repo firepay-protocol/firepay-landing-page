@@ -26,6 +26,15 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.glassBackground {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.6px);
+  -webkit-backdrop-filter: blur(1.6px);
+  border: 0.5px solid rgba(130, 127, 127, 0.27);
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
