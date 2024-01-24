@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { Popover, Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (
@@ -9,12 +11,78 @@ const Header = () => {
           <h1 className="ml-3 font-bold text-xl">Firepay</h1>
         </div>
         <div>
-          <ul className="flex gap-6 text-textGrey">
-            <li className="hover:text-white cursor-pointer">Products</li>
-            <li className="hover:text-white cursor-pointer">Integrations</li>
-            <li className="hover:text-white cursor-pointer">Developer</li>
+          <ul className="flex gap-14 text-textGrey">
+            <Popover className={"relative"}>
+              {({ open }) => (
+                <>
+                  <Popover.Button>
+                    <li className="hover:text-white cursor-pointer">
+                      Products
+                    </li>
+                    {open && (
+                      <ChevronDownIcon className="absolute w-5 h-5 left-5" />
+                    )}
+                  </Popover.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Popover.Panel
+                      className={
+                        "absolute w-56 px-5 py-5 glassBackground top-14 -left-20 z-10"
+                      }
+                    >
+                      <ul className="grid gap-5">
+                        <li>Crypto Payments</li>
+                        <li>Subscriptions</li>
+                        <li>Crypto Payment Links</li>
+                        <li>Salaries</li>
+                      </ul>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+            <Popover className={"relative"}>
+              {({ open }) => (
+                <>
+                  <Popover.Button>
+                    <li className="hover:text-white cursor-pointer">
+                      Integrations
+                    </li>
+                    {open && (
+                      <ChevronDownIcon className="absolute w-5 h-5 left-5" />
+                    )}
+                  </Popover.Button>
+                  <Transition
+                    enter="transition duration-100 ease-out"
+                    enterFrom="transform scale-95 opacity-0"
+                    enterTo="transform scale-100 opacity-100"
+                    leave="transition duration-75 ease-out"
+                    leaveFrom="transform scale-100 opacity-100"
+                    leaveTo="transform scale-95 opacity-0"
+                  >
+                    <Popover.Panel
+                      className={
+                        "absolute w-56 px-5 py-5 glassBackground top-14 -left-20 z-10"
+                      }
+                    >
+                      <ul className="grid gap-5">
+                        <li>React</li>
+                        <li>React Native</li>
+                        <li>Woocommerce</li>
+                      </ul>
+                    </Popover.Panel>
+                  </Transition>
+                </>
+              )}
+            </Popover>
+            <li className="hover:text-white cursor-pointer">Developers</li>
             <li className="hover:text-white cursor-pointer">About</li>
-            <li className="hover:text-white cursor-pointer">Contact Us</li>
           </ul>
         </div>
         <div>
