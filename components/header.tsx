@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 
 const Header = () => {
   return (
-    <nav className="fixed  w-full py-10 px-10">
+    <nav className="absolute w-full py-10 px-10">
       <div className="glassBackground px-10 py-2 flex items-center justify-between">
         <div className="flex items-center">
           <Image src={"/logo.svg"} width={45} height={45} alt="logo" />
@@ -33,10 +33,10 @@ const Header = () => {
                   >
                     <Popover.Panel
                       className={
-                        "absolute w-56 px-5 py-5 glassBackground top-14 -left-20 z-10"
+                        "absolute w-56 px-5 py-5 bg-backgroundColor2 rounded-md top-14 -left-20"
                       }
                     >
-                      <ul className="grid gap-5">
+                      <ul className="grid gap-5 z-10">
                         <li>Crypto Payments</li>
                         <li>Subscriptions</li>
                         <li>Crypto Payment Links</li>
@@ -68,7 +68,7 @@ const Header = () => {
                   >
                     <Popover.Panel
                       className={
-                        "absolute w-56 px-5 py-5 glassBackground top-14 -left-20 z-10"
+                        "absolute w-56 px-5 py-5 bg-backgroundColor2 rounded-md top-14 -left-20 z-10"
                       }
                     >
                       <ul className="grid gap-5">
