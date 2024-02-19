@@ -10,6 +10,7 @@ const config: Config = {
   theme: {
     colors: {
       backgroudColor: "#0E0F2A",
+      backgroundColor2: "#161731",
       white: "#FFFFFF",
       textGrey: "#C6C6C6",
     },
